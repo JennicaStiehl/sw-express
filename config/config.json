@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "jennicastiehl",
+    "password": null,
+    "database": "sw-development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "jennicastiehl",
+    "password": null,
+    "database": "sw-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "jennicastiehl",
+    "password": null,
+    "database": "sw-production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}
