@@ -24,7 +24,7 @@ app.use(users, require('./api/v1/users'));
 app.use(location, require('./api/v1/location'));
 
 // forecast api routes
-// app.use(forecast, require('./api/v1/forecast'));
+app.use(forecast, require('./api/v1/forecast'));
 
 // port environment variables and communicatio
 const PORT = process.env.PORT || 5000;
