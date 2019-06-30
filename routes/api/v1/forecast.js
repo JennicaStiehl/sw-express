@@ -25,15 +25,25 @@ async function getForecast(req, res) {
   const response = await fetch(`https://api.darksky.net/forecast/${process.env.DarkSky_API_Key}/${latitude},${longitude}`)
 //https://api.darksky.net/forecast/dae9a56cb0f5af3f9967920a8d95b69f/39.7392358,-104.990251
   const data = await response.json();
-  const timezone = data["timezone"]
-  const curr_summary = data["currently"]["summary"]
-  const curr_icon = data["currently"]["icon"]
-  const curr_temp = data["currently"]["temperature"]
-  const hrly_summary = data["hourly"]["summary"]
-  const hrly_icon = data["hourly"]["icon"]
+  const location = data["timezone"]
+  const current_summary = data["currently"]["summary"]
+  const current_icon = data["currently"]["icon"]
+  const current_temp = data["currently"]["temperature"]
+  const hourly_summary = data["hourly"]["summary"]
+  const hourly_icon = data["hourly"]["icon"]
   const daily_summary = data["daily"]["summary"]
   const daily_icon = data["daily"]["icon"]
-
+  return {location,
+              currently: {
+              current_summary,
+              current_icon,
+              current_temp},
+              hourly: {
+              hourly_summary,
+              hourly_icon},
+              daily: {
+              daily_summary,
+              daily_icon}}
   // var pry = require('pryjs'); eval(pry.it);
 
   console.log(`${temp}`);

@@ -24,8 +24,11 @@ const json = true
 async function getLocation(req, res) {
   const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=denver,co&key=${process.env.google_api_key}&json=true`);
   const data = await response.json();
-    const lat = data["results"][0]["geometry"]["location"]["lat"]
-    const lng = data["results"][0]["geometry"]["location"]["lng"]
+    const latitude = data["results"][0]["geometry"]["location"]["lat"]
+    const longitude = data["results"][0]["geometry"]["location"]["lng"]
+    return {latitude,
+              longitude
+    }
     console.log(`${lat}, ${lng}`);
 }
 
