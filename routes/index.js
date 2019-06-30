@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 const logger = require('../middleware/logger');
 const users = require('./api/v1/users');
-const forecast = require('./api/v1/forecast');
 const location = require('./api/v1/location');
+const forecast = require('./api/v1/forecast');
 // const router = express.Router();
 const app = express();
 require('dotenv').config();
@@ -22,6 +22,7 @@ app.use(users, require('./api/v1/users'));
 
 // location routes
 app.use(location, require('./api/v1/location'));
+
 // forecast api routes
 // app.use(forecast, require('./api/v1/forecast'));
 
