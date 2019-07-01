@@ -3,6 +3,7 @@ pry = require('pryjs')
 const express = require('express');
 const router = express.Router();
 const fetch = require("node-fetch");
+const models = require('../../../models');
 
 require('dotenv').config();
 const cors = require('cors')
@@ -17,6 +18,21 @@ router.get('/location', (req, res) => {
       res.status(500).send(error)
     });
 });
+router.post('/locations', (req, res) =>
+  models.Location.create({
+    city: req.body.city,
+    state: req.body.state
+  })
+  .then(locationResponse => {
+    res.status(200).json({locationResponse})
+  })
+  .catch(error => {
+    res.status(400).json({msg: 'error'})
+  })
+// } else {
+//   res.status(406.json({msg: 'Unable to create account'}))
+// }
+);
 const address = 'denver, co'
 const key = process.env.google_api_key
 const json = true
