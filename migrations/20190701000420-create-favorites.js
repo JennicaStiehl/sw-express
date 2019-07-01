@@ -1,6 +1,4 @@
 'use strict';
-const User = require('../models/user');
-const Favorites = require('../models/favorites');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -14,14 +12,14 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'User',
+          model: 'Users',
           key: 'id'
         }
       },
       location_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Location',
+          model: 'Locations',
           key: 'id'
         }
       },
