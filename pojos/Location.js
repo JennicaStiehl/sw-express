@@ -8,7 +8,9 @@ class LocationCreator {
     var location = Location.find_by_city(this.city)
   }
   class Location extends LocationCreator {
-    constructor() {
-      super()
+    constructor(latitude, longitude) {
+      super(city)
+      this.latitude
     }
   }
+module.exports = Location
